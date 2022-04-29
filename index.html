@@ -18,11 +18,26 @@
   <body>
     WItam
 
-    <div ng-app="">
+    <div ng-app="myApp" ng-controller="myCtrl" ng-init="myCol='lightblue';quantity=1;cost=5" w3-test-directive>
       <p>Name: <input type="text" ng-model="name" /></p>
       <p ng-bind="name"></p>
 	  <p>My first expression: {{ 5 + 5 }}</p>
+	  <input style="background-color:{{myCol}}" ng-model="myCol">
+
+	  <p>Total in dollar: {{ quantity * cost }}</p>
+	  <p>Total in dollar: <span ng-bind="quantity * cost"></span></p>
+
+	  <p>The init values is quantity {{quantity}}</p>
+	  <p>The init values is cost {{cost}}</p>
+
+	  <p >The init values with bind is quantity <span ng-bind="quantity"></span></p>
+	  <p >The init values with bind is cost <span ng-bind="cost"></span></p>
+	  <p>{{ firstName + " " + lastName }}</p>
+
+	  
     </div>
+	<script src="js/myApp.js"></script>
+	<script src="js/myCtrl.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>
