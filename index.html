@@ -1,20 +1,28 @@
-
 <!DOCTYPE html>
 
-
 <html lang="pl-PL">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="description" content="Tworzenie nowoczesnych stron internetowych">
-		<meta name="keywords" content="HTML,CSS,XML,JavaScript">
-		<meta name="author" content="Kuba Koder = Jakub Grzegorzek">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<title>Title of the document</title>
-	</head>
-	
-	<body>
-	WItam
-	<script src="js/script.js"></script>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Tworzenie nowoczesnych stron internetowych"
+    />
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript" />
+    <meta name="author" content="Kuba Koder = Jakub Grzegorzek" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <title>Title of the document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  </head>
+
+  <body>
+    WItam
+
+    <div ng-app="">
+      <p>Name: <input type="text" ng-model="name" /></p>
+      <p ng-bind="name"></p>
+	  <p>My first expression: {{ 5 + 5 }}</p>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
 </html>
