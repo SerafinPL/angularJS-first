@@ -1,0 +1,39 @@
+@charset "UTF-8";
+/*--- RESET ---*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: table; }
+
+/*--- RESET END ---*/
+/*--- GŁÓWNE KLASY OGÓLNE---*/
+body {
+  margin: auto;
+  overflow: hidden;
+  padding: 0;
+  box-sizing: border-box;
+  color: #FFF;
+  background-color: #20303B;
+  /* CIEMNE TŁO */ }
+
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: table; }
+
+/*--- HEADER ORAZ MENU ---*/
+/*--- MAIN ---*/
+.box-main {
+  width: 95%;
+  margin: auto;
+  color: #00f600;
+  /* ZIELONY JASNY */ }
+
+/*--- FOOTER ---*/
+
+/*# sourceMappingURL=style.css.map */
