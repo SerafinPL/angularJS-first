@@ -56,7 +56,17 @@
         </li>
       </ul>
 
+	  <form ng-app="" name="myForm">
+		Email:
+		<input type="email" name="myAddress" ng-model="text">
+		<span ng-show="myForm.myAddress.$error.email">Not a valid e-mail address</span>
+		
+		<p >Twój e-mail: {{text}}</p>
+	  </form>
+
     </div>
+
+
     <noscript
       >Please enable JavaScript to continue using this application.</noscript
     >
