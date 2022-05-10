@@ -4,7 +4,18 @@
 
 
 
+let Person = function (firstname)  {
+    this.firstname = firstname;
+}
 
+const logPerson = (person) => {
+    
+    console.log(person)
+}
+
+let jons = new Person ('jonny');
+
+logPerson(jons);
 
 
 
