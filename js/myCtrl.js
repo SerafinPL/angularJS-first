@@ -34,7 +34,7 @@ app.controller('myCtrl',['$scope', '$log', '$timeout','$filter', function($scope
 
   $scope.handle = '';
 
-  $scope.lowerCaseFunc = function () {
+  $scope.lowerCaseFunc = function() {
 
     return $filter('lowercase')($scope.handle);
   }
