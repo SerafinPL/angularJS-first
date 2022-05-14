@@ -26,7 +26,12 @@
 
 app.controller('myCtrl',['$scope', '$log', '$timeout','$filter', function($scope, $log, $timeout, $filter){
 
-  $log.info($scope)
+  $log.info($scope);
+  $scope.firstName = "John";
+    
+    $scope.lastName = "Doe";
+
+    $scope.text = '';
 
   $timeout(function() {
     $scope.time = new Date;
