@@ -1,11 +1,10 @@
-
 // app.controller("myCtrl", function($scope, $log, $filter) {
 //     $scope.firstName = "John";
-    
+
 //     $scope.lastName = "Doe";
 //     $scope.formatedName = $filter('uppercase')($scope.firstName)
 //     // $scope.getName = function() {
-//     //   return($scope.firstName + ' ' + $scope.lastName);  
+//     //   return($scope.firstName + ' ' + $scope.lastName);
 //     // }
 
 //     // console.log($scope.getName());
@@ -23,26 +22,52 @@
 
 //   console.log(searchPeople);
 
+app.controller("myCtrl", [
+  "$scope",
+  "$log",
+  "$timeout",
+  "$filter",
+  "$http",
+  "$location",
+  function($scope, $log, $timeout, $filter, $http, $location) {
+    $log.info($scope);
+    $scope.firstName = "John";
 
-app.controller('myCtrl',['$scope', '$log', '$timeout','$filter', function($scope, $log, $timeout, $filter){
-
-  $log.info($scope);
-  $scope.firstName = "John";
-    
     $scope.lastName = "Doe";
 
-    $scope.text = '';
+    $scope.text = "";
 
-  $timeout(function() {
-    $scope.time = new Date;
-  },3000);
+    $timeout(function() {
+      $scope.time = new Date();
+    }, 3000);
 
-  $scope.handle = '';
+    $scope.handle = "";
 
-  $scope.lowerCaseFunc = function() {
+    $scope.activity = "";
 
-    return $filter('lowercase')($scope.handle);
-  }
+    $scope.lowerCaseFunc = function() {
+      return $filter("lowercase")($scope.handle);
+    };
 
+    $http.get("https://www.boredapi.com/api/activity").then(
+      function(result) {
+        $scope.activity = result;
+        $log.info($scope.activity);
+      },
+      function(err) {
+        $log.warn(err);
+      }
+    );
 
-}])
+    $log.info($location.hash());
+    $log.info($location.host());
+
+    
+  },
+]);
+
+app.run(function($rootScope) {
+  $rootScope.$on('$locationChangeSuccess', function() {
+     console.log('$locationChangeSuccess changed!', new Date());
+  });
+});
