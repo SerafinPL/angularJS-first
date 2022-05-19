@@ -14,7 +14,7 @@
 /*--- GŁÓWNE KLASY OGÓLNE---*/
 body {
   margin: auto;
-  overflow: hidden;
+  /* overflow: hidden; */
   padding: 0;
   box-sizing: border-box;
   color: #FFF;
