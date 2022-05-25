@@ -28,10 +28,13 @@ app.component("hello", {
 });
 
 app.component("about", {
-  template:
-    "<h3> Sekcja About !</h3>" +
-    "<p>{{clickDate}}</p>" +
-    '<button ng-click="click()">Kliknij po date</button>',
+    transclude: true,
+//   template:
+//     "<h3> Sekcja About !</h3>" +
+//     "<p>{{clickDate}}</p>" +
+//     '<button ng-click="click()">Kliknij po date</button>',
+templateUrl: './js/about.html',
+// template: require('./about.html')
   controller: function($scope) {
     $scope.clickDate = "brak daty";
     $scope.click = function() {
@@ -68,20 +71,7 @@ app.config(function($stateProvider) {
     resolve: {
       people: function($http, $log) {
         return fatchTask($http, $log);
-        //   return(
-
-        //       $http.get("https://www.boredapi.com/api/activity").then(
-        //           function(result) {
-        //               $log.info(result);
-        //               return result.data.activity;
-
-        //           },
-        //           function(err) {
-        //             $log.warn(err);
-        //             return null;
-        //           }
-        //         )
-        //   )
+        
       },
     },
   };
